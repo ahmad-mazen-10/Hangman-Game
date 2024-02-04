@@ -69,19 +69,23 @@ document.addEventListener('click', (e) => {
             }
         } else {
             document.getElementById('win').play();
-            if (chossenWord.every(wordLtr => letter_space.includes(wordLtr))) {
+             let allLettersGuessed = guessSpan.every(span => span.innerHTML !== '');
+            if (allLettersGuessed) {
                 ltrsContainer.classList.add('finished');
             }
+            // if (chossenWord.every(wordLtr => letter_space.includes(wordLtr))) {
+            //     ltrsContainer.classList.add('finished');
+            // }
         }
     }
 })
 
 
 endGame = () => {
-    alert('اتشنقت يـ معلم');
     let div = document.createElement('div');
     let divTxt = document.createTextNode(`Game  Over! The Word was : ${random_VALUE} `);
     div.appendChild(divTxt);
     div.className = 'popup';
     document.body.appendChild(div);
+    alert('اتشنقت يـ معلم');
 }
