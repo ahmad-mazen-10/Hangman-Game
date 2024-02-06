@@ -260,3 +260,16 @@ transform: translate(-50%,-50%);
     top: 25%;
     left: 10%;
 }
+.popupWin{
+    background-color: #800900;
+    border-radius: 50px;
+    position: fixed;
+    color: #ffea00;
+    text-shadow: 2px 2px 5px #ffea00;
+    width: 70%;
+    text-align: center;
+    font-size: 60px;
+    padding: 40px 60px;
+    top: 25%;
+    left: 10%;
+}

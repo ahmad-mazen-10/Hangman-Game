@@ -12,7 +12,7 @@ ltrsArr.forEach(letter => {
 
 const words = {
     programming: ['generic programming', 'oop', 'functional programming'],
-    language: ['c++', 'java', 'python', 'typeScript', 'javaScript', 'c#', 'php', 'ruby', 'go'],
+    language: ['c++', 'java', 'python', 'typescript', 'javascript', 'c#', 'php', 'ruby', 'go'],
     framework: ['stl', 'django', 'express.js','next.js', 'react', 'angular', 'vue.js', 'node.js'],
     algorithm: ['dynamic programming', 'greedy algorithms', 'divide and conquer algorithms', 'backtracking algorithms', 'breadth-first search', 'depth-first search']
 };
@@ -69,13 +69,12 @@ document.addEventListener('click', (e) => {
             }
         } else {
             document.getElementById('win').play();
-             let allLettersGuessed = guessSpan.every(span => span.innerHTML !== '');
+            let allLettersGuessed = Array.from(guessSpan).every(span => span.innerHTML !== '');
             if (allLettersGuessed) {
                 ltrsContainer.classList.add('finished');
+                winGame();
             }
-            // if (chossenWord.every(wordLtr => letter_space.includes(wordLtr))) {
-            //     ltrsContainer.classList.add('finished');
-            // }
+
         }
     }
 })
@@ -87,5 +86,16 @@ endGame = () => {
     div.appendChild(divTxt);
     div.className = 'popup';
     document.body.appendChild(div);
-    alert('اتشنقت يـ معلم');
+    setTimeout(() => {
+        alert('اتشنقت يـ معلم');
+    }, 1000);
+}
+
+winGame = () => {
+    let div = document.createElement('div');
+    let divTxt = document.createTextNode(`Nice ,  You Guess the word true`);
+    div.appendChild(divTxt);
+    div.className = 'popupWin';
+    document.body.appendChild(div);
+    
 }
